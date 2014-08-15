@@ -203,7 +203,7 @@ class Schema(FancyValidator):
                         validator, 'validate_partial_form', False)):
                     continue
                 try:
-                    validator.validate_partial(value_dict, state)
+                    validator.validate_partial(new, state)
                 except Invalid as e:
                     sub_errors = e.unpack_errors()
                     if not isinstance(sub_errors, dict):
